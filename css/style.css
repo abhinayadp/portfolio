@@ -373,7 +373,8 @@ a {
     height: 150px;
     object-fit: cover;
     /* Cover for circular crop */
-    object-position: 65% center;
+    object-position: 80% center;
+    /* Shifted further left to center the face better */
     border-radius: 50%;
     /* Circle shape */
     border: 3px solid var(--accent-color);
