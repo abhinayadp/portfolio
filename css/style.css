@@ -69,7 +69,7 @@ h1 {
 }
 
 h2.section-title {
-    font-size: 36px;
+    font-size: 28px;
     margin-bottom: 50px;
     text-align: center;
     display: table;
@@ -420,28 +420,88 @@ a {
     box-shadow: 6px 6px 0px #4a4a4a;
 }
 
-/* About Grid */
-.about-grid {
+/* About & Education */
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-alt {
+    background-color: var(--bg-secondary);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.github-link {
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+}
+
+.github-link:hover {
+    color: var(--accent-color);
+    background: rgba(255, 107, 107, 0.1);
+    border-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-}
-
-.edu-item {
+    gap: 30px;
     margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px dashed #e0e0e0;
 }
 
-.edu-item:first-of-type {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
+.school {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 5px 0;
+}
+
+.gpa {
+    display: block;
+    font-size: 14px;
+    color: var(--accent-secondary);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.coursework {
+    margin-top: 15px;
+}
+
+.coursework h5 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.course-tags span {
+    font-size: 11px;
+    background: var(--pill-bg);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #4a4a4a;
+    font-weight: 600;
 }
 
 .year {
@@ -505,7 +565,6 @@ a {
     background: var(--accent-secondary);
     padding: 4px 12px;
     border-radius: 4px;
-    margin-bottom: 12px;
     border: 1px solid #4a4a4a;
     box-shadow: 2px 2px 0px #4a4a4a;
 }
@@ -566,9 +625,11 @@ a {
 .skill-tags span {
     background: #fff;
     border: 1px solid #4a4a4a;
-    padding: 6px 12px;
+    padding: 4px 10px;
+    /* Reduced from 6px 12px */
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 12px;
+    /* Reduced from 13px */
     font-weight: 600;
     transition: all 0.2s;
 }
@@ -591,26 +652,30 @@ a {
 
 .contact-links {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    gap: 20px;
     margin-top: 30px;
 }
 
-.contact-link {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary);
+.contact-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     background: #fff;
-    padding: 10px;
-    border-radius: 12px;
+    color: var(--text-primary);
     border: 2px solid #4a4a4a;
     box-shadow: 3px 3px 0px #4a4a4a;
-    transition: transform 0.2s;
+    transition: all 0.2s ease;
 }
 
-.contact-link:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px #4a4a4a;
+.contact-icon-link:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0px #4a4a4a;
+    color: var(--accent-color);
+    background: var(--bg-secondary);
 }
 
 footer {
