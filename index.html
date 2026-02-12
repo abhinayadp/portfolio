@@ -14,9 +14,60 @@
 </head>
 
 <body>
+    <div id="loader-wrapper">
+        <div class="loader-btn">
+            <div class="loader-flower-wrapper">
+                <div class="loader-text">Loading</div>
+                <div class="loader-flower loader-flower1">
+                    <div class="loader-petal one"></div>
+                    <div class="loader-petal two"></div>
+                    <div class="loader-petal three"></div>
+                    <div class="loader-petal four"></div>
+                </div>
+                <div class="loader-flower loader-flower2">
+                    <div class="loader-petal one"></div>
+                    <div class="loader-petal two"></div>
+                    <div class="loader-petal three"></div>
+                    <div class="loader-petal four"></div>
+                </div>
+                <div class="loader-flower loader-flower3">
+                    <div class="loader-petal one"></div>
+                    <div class="loader-petal two"></div>
+                    <div class="loader-petal three"></div>
+                    <div class="loader-petal four"></div>
+                </div>
+                <div class="loader-flower loader-flower4">
+                    <div class="loader-petal one"></div>
+                    <div class="loader-petal two"></div>
+                    <div class="loader-petal three"></div>
+                    <div class="loader-petal four"></div>
+                </div>
+                <div class="loader-flower loader-flower5">
+                    <div class="loader-petal one"></div>
+                    <div class="loader-petal two"></div>
+                    <div class="loader-petal three"></div>
+                    <div class="loader-petal four"></div>
+                </div>
+                <div class="loader-flower loader-flower6">
+                    <div class="loader-petal one"></div>
+                    <div class="loader-petal two"></div>
+                    <div class="loader-petal three"></div>
+                    <div class="loader-petal four"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar">
         <div class="nav-content">
-            <a href="#hero" class="logo">ADP.</a>
+            <div class="logo-group">
+                <a href="#hero" class="logo">ADP.</a>
+                <div class="top-avatar-container">
+                    <video autoplay muted loop playsinline class="top-avatar">
+                        <source src="WHISK 2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -52,9 +103,11 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p>Highly analytical Master’s candidate in Data Science (4.0/4.0 GPA) with a strong foundation
+                        <p>Highly analytical Master’s candidate in Data Science (4.0/4.0 GPA) with a strong
+                            foundation
                             in Artificial Intelligence and Machine Learning. Proven ability to design and implement
-                            end-to-end data systems and predictive models using Python, R, SQL, TensorFlow and Google
+                            end-to-end data systems and predictive models using Python, R, SQL, TensorFlow and
+                            Google
                             BigQuery.</p>
                         <p>Expert in applying advanced statistical and deep learning techniques for solving complex
                             business problems.</p>
@@ -90,7 +143,8 @@
                                 <span class="company">University of Oklahoma</span>
                                 <span class="date">Jan 2026 – Present</span>
                             </div>
-                            <p>Assisted instruction in algorithm design and analysis (Big-O, recursion, sorting, graph
+                            <p>Assisted instruction in algorithm design and analysis (Big-O, recursion, sorting,
+                                graph
                                 algorithms); graded coursework and mentored students.</p>
                         </div>
                     </div>
@@ -102,12 +156,30 @@
             <div class="container">
                 <h2 class="section-title">Selected Projects</h2>
                 <div class="projects-grid">
-                    <article class="project-card glass-card">
+                    <a href="https://github.com/abhinayadp/Power-BI-Data-Professional-Survey-Breakdown" target="_blank"
+                        class="project-card glass-card">
+                        <div class="project-content">
+                            <span class="project-tag">Power BI • Data Analysis</span>
+                            <h3>Data Professional Survey Breakdown</h3>
+                            <p>Interactive analysis of global data professional survey responses focusing on salary,
+                                roles, tools, and job satisfaction. Analyzed responses from 630 professionals to
+                                identify career trends and key insights within the data industry.</p>
+                            <div class="tech-stack">
+                                <span>Power BI</span>
+                                <span>Power Query</span>
+                                <span>DAX</span>
+                                <span>Data Visualization</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Pratham0919/Cardiovascular-disease-Prediction-Using-Healthcare-Data-Mining-Techniques"
+                        target="_blank" class="project-card glass-card">
                         <div class="project-content">
                             <span class="project-tag">Healthcare Data Mining</span>
                             <h3>Cardiovascular Disease Prediction</h3>
                             <p>Applied classification algorithms on healthcare datasets using Python (Pandas,
-                                Scikit-learn). Compared Logistic Regression, Random Forests, and SVM, achieving strong
+                                Scikit-learn). Compared Logistic Regression, Random Forests, and SVM, achieving
+                                strong
                                 predictive accuracy for patient risk stratification.</p>
                             <div class="tech-stack">
                                 <span>Python</span>
@@ -115,14 +187,16 @@
                                 <span>Pandas</span>
                             </div>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="project-card glass-card">
+                    <a href="https://github.com/aishwarya0525/SharedTask3" target="_blank"
+                        class="project-card glass-card">
                         <div class="project-content">
                             <span class="project-tag">NLP • SemEval Task</span>
                             <h3>Multilingual Event Detection</h3>
                             <p>Built multilingual NLP pipelines using transformer models (mBERT, mT5, XLM-R) for
-                                polarization detection across diverse languages and events. Applied data augmentation
+                                polarization detection across diverse languages and events. Applied data
+                                augmentation
                                 techniques such as back-translation.</p>
                             <div class="tech-stack">
                                 <span>Transformers</span>
@@ -130,14 +204,16 @@
                                 <span>XLM-R</span>
                             </div>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="project-card glass-card">
+                    <a href="https://github.com/abhinayadp/Deepfake-Detection" target="_blank"
+                        class="project-card glass-card">
                         <div class="project-content">
                             <span class="project-tag">Computer Vision</span>
                             <h3>Deepfake Detection CNN</h3>
                             <p>Designed a CNN-based model with TensorFlow/Keras to identify manipulated images,
-                                achieving 97% accuracy. Enhanced detection performance through feature engineering and
+                                achieving 97% accuracy. Enhanced detection performance through feature engineering
+                                and
                                 fine-tuning convolutional layers.</p>
                             <div class="tech-stack">
                                 <span>TensorFlow</span>
@@ -145,22 +221,7 @@
                                 <span>CNN</span>
                             </div>
                         </div>
-                    </article>
-
-                    <article class="project-card glass-card">
-                        <div class="project-content">
-                            <span class="project-tag">FinTech</span>
-                            <h3>Online Payment Fraud Detection</h3>
-                            <p>Developed a fraud detection framework using Random Forest and XGBoost. Built real-time
-                                anomaly detection system to flag suspicious transactions, improving financial risk
-                                mitigation.</p>
-                            <div class="tech-stack">
-                                <span>XGBoost</span>
-                                <span>Random Forest</span>
-                                <span>Anomaly Detection</span>
-                            </div>
-                        </div>
-                    </article>
+                    </a>
                 </div>
             </div>
         </section>
@@ -170,7 +231,8 @@
                 <h2 class="section-title">Research</h2>
                 <div class="research-card glass-card">
                     <h3>Deepfake Detection</h3>
-                    <p class="journal">International Journal of Research and Analytical Reviews (IJRAR), Vol. 11, Issue
+                    <p class="journal">International Journal of Research and Analytical Reviews (IJRAR), Vol. 11,
+                        Issue
                         3, 2024</p>
                     <p>Proposed a CNN-based framework to detect manipulated media, achieving 98–99% accuracy on
                         large-scale datasets.</p>
@@ -231,6 +293,13 @@
             </div>
         </section>
     </main>
+
+    <div id="fixed-avatar-container">
+        <video autoplay muted loop playsinline id="fixed-avatar">
+            <source src="WHISK.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

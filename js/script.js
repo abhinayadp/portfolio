@@ -49,4 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.boxShadow = '4px 4px 0px rgba(0,0,0,0.1)';
         }
     });
+
+    // Page Loader dismissal
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader-wrapper');
+        if (loader) {
+            loader.classList.add('fade-out');
+            setTimeout(() => {
+                loader.remove();
+            }, 600); // Wait for transition to complete
+        }
+    });
 });

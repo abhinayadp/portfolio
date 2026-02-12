@@ -111,6 +111,11 @@ a {
     padding: 0 30px;
 }
 
+.logo-group {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     font-weight: 800;
     font-size: 20px;
@@ -131,7 +136,8 @@ a {
     transition: color 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent-color);
 }
 
@@ -292,9 +298,46 @@ a {
     }
 }
 
-/* Sections */
-.section {
-    padding: var(--section-spacing) 0;
+/* Navbar Avatar (WHISK 2) */
+.top-avatar-container {
+    display: flex;
+    align-items: center;
+    margin-left: 38px;
+    /* Approx 1cm */
+    z-index: 1001;
+    pointer-events: none;
+    height: 100%;
+}
+
+.top-avatar {
+    height: 45px;
+    /* Sized to fit perfectly inside the 60px navbar */
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1111px) {
+    .top-avatar-container {
+        margin-left: 20px;
+    }
+
+    .top-avatar {
+        height: 35px;
+    }
+}
+
+@keyframes gentlePop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .container {
@@ -303,8 +346,60 @@ a {
     padding: 0 20px;
 }
 
+/* Sections */
+.section {
+    padding: var(--section-spacing) 0;
+}
+
+/* Fixed Avatar Container - Top Right (WHISK) */
+#fixed-avatar-container {
+    position: fixed;
+    top: 20px;
+    /* Moved to top */
+    right: 20px;
+    z-index: 999;
+    /* Below navbar but fixed */
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fixed-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes floatingAvatar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    #fixed-avatar-container {
+        width: 80px;
+        height: 80px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
 /* Cards */
 .glass-card {
+    display: block;
+    /* Ensure anchor tags behave like blocks */
     background: var(--card-bg);
     border: var(--card-border);
     border-radius: var(--card-radius);
@@ -567,4 +662,180 @@ footer {
     .navbar {
         width: 95%;
     }
+}
+
+/* Loading Screen Styles */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader-wrapper.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-btn {
+    height: 4em;
+    width: 12em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0px solid black;
+    cursor: default;
+    font-family: var(--font-main);
+    font-weight: bold;
+}
+
+.loader-flower-wrapper {
+    height: 2em;
+    width: 8em;
+    position: relative;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-text {
+    font-size: 17px;
+    z-index: 1;
+    color: var(--text-primary);
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: none 0.5s;
+}
+
+.loader-flower {
+    display: grid;
+    grid-template-columns: 1.5em 1.5em;
+    /* Expanded by default for animation */
+    position: absolute;
+    transition: none 0.5s;
+}
+
+.loader-flower1 {
+    top: -12px;
+    left: -13px;
+    animation: 15s linear 0s normal none infinite running loader-flower1;
+}
+
+@keyframes loader-flower1 {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(365deg);
+    }
+}
+
+.loader-flower2 {
+    bottom: -5px;
+    left: 8px;
+    animation: 13s linear 1s normal none infinite running loader-flower2;
+}
+
+@keyframes loader-flower2 {
+    0% {
+        transform: rotate(35deg);
+    }
+
+    100% {
+        transform: rotate(-325deg);
+    }
+}
+
+.loader-flower3 {
+    bottom: -15px;
+    animation: 16s linear 1s normal none infinite running loader-flower3;
+}
+
+@keyframes loader-flower3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-flower4 {
+    top: -14px;
+    animation: 17s linear 1s normal none infinite running loader-flower4;
+}
+
+@keyframes loader-flower4 {
+    0% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(375deg);
+    }
+}
+
+.loader-flower5 {
+    right: 11px;
+    top: -3px;
+    animation: 20s linear 1s normal none infinite running loader-flower5;
+}
+
+@keyframes loader-flower5 {
+    0% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(-335deg);
+    }
+}
+
+.loader-flower6 {
+    right: -15px;
+    bottom: -15px;
+    animation: 15s linear 1s normal none infinite running loader-flower6;
+}
+
+@keyframes loader-flower6 {
+    0% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(390deg);
+    }
+}
+
+.loader-petal {
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 40% 70% / 7% 90%;
+    background: violet;
+    border: 0.5px solid purple;
+    z-index: 0;
+}
+
+.loader-petal.two {
+    transform: rotate(90deg);
+}
+
+.loader-petal.three {
+    transform: rotate(270deg);
+}
+
+.loader-petal.four {
+    transform: rotate(180deg);
 }
