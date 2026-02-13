@@ -1,4 +1,49 @@
+// LiquidEther class is loaded via LiquidEther.js script tag in index.html
+
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Page Loader dismissal (Immediate + Fallback)
+    const hideLoader = () => {
+        const loader = document.getElementById('loader-wrapper');
+        if (loader && !loader.classList.contains('fade-out')) {
+            loader.classList.add('fade-out');
+            setTimeout(() => loader.remove(), 600);
+        }
+    };
+
+    // Hide when everything is loaded
+    window.addEventListener('load', hideLoader);
+
+    // Safety Fallback: Hide after 3 seconds anyway
+    setTimeout(hideLoader, 3000);
+
+    // 2. Initialize LiquidEther Background
+    const bgContainer = document.getElementById('liquid-ether-bg');
+    if (bgContainer) {
+        try {
+            new LiquidEther(bgContainer, {
+                colors: ['#191970', '#2563eb', '#60a5fa'],
+                mouseForce: 20,
+                cursorSize: 100,
+                isViscous: true,
+                viscous: 30,
+                iterationsViscous: 32,
+                iterationsPoisson: 32,
+                resolution: 0.5,
+                isBounce: false,
+                autoDemo: false,
+                autoSpeed: 0,
+                autoIntensity: 0,
+                takeoverDuration: 0,
+                autoResumeDelay: 999999,
+                autoRampDuration: 0,
+                dissipation: 0.94
+            });
+        } catch (error) {
+            console.warn('Background effect failed to load, continuing with standard theme.', error);
+        }
+    }
+
+
     // Intersection Observer for Fade-in animations
     const observerOptions = {
         threshold: 0.1,
@@ -42,22 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '4px 4px 0px rgba(0,0,0,0.15)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+            navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.05)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-            navbar.style.boxShadow = '4px 4px 0px rgba(0,0,0,0.1)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.75)';
+            navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.05)';
         }
     });
 
-    // Page Loader dismissal
-    window.addEventListener('load', () => {
-        const loader = document.getElementById('loader-wrapper');
-        if (loader) {
-            loader.classList.add('fade-out');
-            setTimeout(() => {
-                loader.remove();
-            }, 600); // Wait for transition to complete
-        }
-    });
+
 });

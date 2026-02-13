@@ -8,12 +8,19 @@
     <meta name="description"
         content="Portfolio of Abhinaya Deepika Peri, a Data Science Master's candidate specializing in AI, ML, and Predictive Modeling.">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/LiquidEther.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        #about .about-content {
+            text-align: justify;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="liquid-ether-bg" class="liquid-ether-container"></div>
     <div id="loader-wrapper">
         <div class="loader-btn">
             <div class="loader-flower-wrapper">
@@ -70,10 +77,10 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Highlights</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact" class="btn-contact">Contact</a></li>
             </ul>
         </div>
@@ -120,68 +127,11 @@
             </div>
         </section>
 
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="education-grid fade-in-up">
-                    <div class="education-card glass-card">
-                        <div class="edu-item">
-                            <span class="year">2024 – 2026</span>
-                            <h4>M.S. Data Science and Analytics</h4>
-                            <p class="school">University of Oklahoma</p>
-                            <span class="gpa">GPA: 4.0/4.0</span>
-                            <div class="coursework">
-                                <h5>Relevant Coursework:</h5>
-                                <div class="course-tags">
-                                    <span>Database Management Systems</span>
-                                    <span>Intelligent Data Analytics</span>
-                                    <span>Statistics</span>
-                                    <span>Algorithm Analysis</span>
-                                    <span>Data Mining</span>
-                                    <span>Energy Analytics</span>
-                                    <span>NLP</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="education-card glass-card">
-                        <div class="edu-item">
-                            <span class="year">2020 – 2024</span>
-                            <h4>B.Tech Computer Science (AI & ML)</h4>
-                            <p class="school">CMR Engineering College</p>
-                            <span class="gpa">GPA: 7.91/10.0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content glass-card">
-                            <div class="timeline-header">
-                                <h3>Graduate Teaching Assistant</h3>
-                                <span class="company">University of Oklahoma</span>
-                                <span class="date">Jan 2026 – Present</span>
-                            </div>
-                            <p>Assisted instruction in algorithm design and analysis (Big-O, recursion, sorting,
-                                graph
-                                algorithms); graded coursework and mentored students.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Selected Projects</h2>
                 <div class="projects-grid">
-                    <div class="project-card glass-card">
+                    <div class="glass-card project-card">
                         <div class="project-content">
                             <div class="project-header">
                                 <span class="project-tag">Power BI • Data Analysis</span>
@@ -209,7 +159,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card glass-card">
+                    <div class="glass-card project-card">
                         <div class="project-content">
                             <div class="project-header">
                                 <span class="project-tag">Healthcare Data Mining</span>
@@ -227,8 +177,7 @@
                             <h3>Cardiovascular Disease Prediction</h3>
                             <p>Applied classification algorithms on healthcare datasets using Python (Pandas,
                                 Scikit-learn). Compared Logistic Regression, Random Forests, and SVM, achieving
-                                strong
-                                predictive accuracy for patient risk stratification.</p>
+                                strong predictive accuracy for patient risk stratification.</p>
                             <div class="tech-stack">
                                 <span>Python</span>
                                 <span>Scikit-learn</span>
@@ -237,7 +186,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card glass-card">
+                    <div class="glass-card project-card">
                         <div class="project-content">
                             <div class="project-header">
                                 <span class="project-tag">NLP • SemEval Task</span>
@@ -255,8 +204,7 @@
                             <h3>Multilingual Event Detection</h3>
                             <p>Built multilingual NLP pipelines using transformer models (mBERT, mT5, XLM-R) for
                                 polarization detection across diverse languages and events. Applied data
-                                augmentation
-                                techniques such as back-translation.</p>
+                                augmentation techniques such as back-translation.</p>
                             <div class="tech-stack">
                                 <span>Transformers</span>
                                 <span>mBERT</span>
@@ -265,7 +213,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card glass-card">
+                    <div class="glass-card project-card">
                         <div class="project-content">
                             <div class="project-header">
                                 <span class="project-tag">Computer Vision</span>
@@ -283,8 +231,7 @@
                             <h3>Deepfake Detection CNN</h3>
                             <p>Designed a CNN-based model with TensorFlow/Keras to identify manipulated images,
                                 achieving 97% accuracy. Enhanced detection performance through feature engineering
-                                and
-                                fine-tuning convolutional layers.</p>
+                                and fine-tuning convolutional layers.</p>
                             <div class="tech-stack">
                                 <span>TensorFlow</span>
                                 <span>Keras</span>
@@ -296,31 +243,7 @@
             </div>
         </section>
 
-        <section id="research" class="section">
-            <div class="container">
-                <h2 class="section-title">Research</h2>
-                <div class="research-card glass-card">
-                    <div class="project-header">
-                        <h3>Deepfake Detection</h3>
-                        <a href="https://ijrar.org/papers/IJRAR24C1087.pdf" target="_blank" class="github-link"
-                            title="View Full Paper">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="journal">International Journal of Research and Analytical Reviews (IJRAR), Vol. 11,
-                        Issue
-                        3, 2024</p>
-                    <p>Proposed a CNN-based framework to detect manipulated media, achieving 98–99% accuracy on
-                        large-scale datasets.</p>
-                </div>
-            </div>
-        </section>
+
 
         <section id="skills" class="section">
             <div class="container">
@@ -389,6 +312,86 @@
             </div>
         </section>
 
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="split-grid">
+                    <div class="experience-col">
+                        <h2 class="section-title alternate">Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass-card smaller-card">
+                                    <div class="timeline-header">
+                                        <h3>Graduate Teaching Assistant</h3>
+                                        <span class="company">University of Oklahoma</span>
+                                        <span class="date">Jan 2026 – Present</span>
+                                    </div>
+                                    <p>Assisted instruction in algorithm design and analysis; mentored students.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="research-col">
+                        <h2 class="section-title alternate">Research</h2>
+                        <div class="research-card glass-card smaller-card">
+                            <div class="project-header">
+                                <h3>Deepfake Detection</h3>
+                                <a href="https://ijrar.org/papers/IJRAR24C1087.pdf" target="_blank" class="github-link"
+                                    title="View Full Paper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="journal">IJRAR, Vol. 11, Issue 3, 2024</p>
+                            <p>Proposed a CNN-based framework to detect manipulated media, achieving 98–99% accuracy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid fade-in-up">
+                    <div class="education-card glass-card">
+                        <div class="edu-item">
+                            <span class="year">2024 – 2026</span>
+                            <h4>M.S. Data Science and Analytics</h4>
+                            <p class="school">University of Oklahoma</p>
+                            <span class="gpa">GPA: 4.0/4.0</span>
+                            <div class="coursework">
+                                <h5>Relevant Coursework:</h5>
+                                <div class="course-tags">
+                                    <span>Database Management Systems</span>
+                                    <span>Intelligent Data Analytics</span>
+                                    <span>Statistics</span>
+                                    <span>Algorithm Analysis</span>
+                                    <span>Data Mining</span>
+                                    <span>Energy Analytics</span>
+                                    <span>NLP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-card glass-card">
+                        <div class="edu-item">
+                            <span class="year">2020 – 2024</span>
+                            <h4>B.Tech Computer Science (AI & ML)</h4>
+                            <p class="school">CMR Engineering College</p>
+                            <span class="gpa">GPA: 7.91/10.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="section footer-section">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
@@ -451,6 +454,9 @@
         </video>
     </div>
 
+    <!-- Core Dependencies -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="js/LiquidEther.js"></script>
     <script src="js/script.js"></script>
 </body>
 
