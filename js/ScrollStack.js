@@ -96,13 +96,20 @@ class ScrollStack {
     init() {
         this.cachePositions();
 
-        // Setup global Lenis for the whole site
-        if (!window.globalLenis) {
+        const updateHandler = (scrollTop) => {
+            this.updateCardTransforms(scrollTop);
+        };
+
+        // Priority 1: Synchronize with global Lenis if available
+        if (window.globalLenis) {
+            window.globalLenis.on('scroll', (e) => updateHandler(e.animatedScroll || e.scroll));
+        }
+        // Priority 2: Initialize new Lenis if not present
+        else if (typeof Lenis !== 'undefined') {
             window.globalLenis = new Lenis({
                 duration: 1.0,
-                lerp: 0.1, // Faster response
+                lerp: 0.1,
                 smoothWheel: true,
-                wheelMultiplier: 1.1,
             });
 
             const raf = (time) => {
@@ -110,19 +117,25 @@ class ScrollStack {
                 requestAnimationFrame(raf);
             };
             requestAnimationFrame(raf);
+
+            window.globalLenis.on('scroll', (e) => updateHandler(e.animatedScroll || e.scroll));
+        }
+        // Priority 3: Fallback to native window scroll
+        else {
+            window.addEventListener('scroll', () => {
+                updateHandler(window.pageYOffset || document.documentElement.scrollTop);
+            }, { passive: true });
         }
 
-        window.globalLenis.on('scroll', (e) => {
-            this.updateCardTransforms(e.animatedScroll || e.scroll);
-        });
-
-        // Handle resize
+        // Always handle resizing
         window.addEventListener('resize', () => {
             this.cachePositions();
-            this.updateCardTransforms(window.globalLenis.scroll);
+            const currentScroll = window.globalLenis ? window.globalLenis.scroll : (window.pageYOffset || document.documentElement.scrollTop);
+            updateHandler(currentScroll);
         });
 
-        // Run once
-        this.updateCardTransforms(window.globalLenis.scroll);
+        // Trigger initial frame
+        const startScroll = window.globalLenis ? window.globalLenis.scroll : (window.pageYOffset || document.documentElement.scrollTop);
+        updateHandler(startScroll);
     }
 }

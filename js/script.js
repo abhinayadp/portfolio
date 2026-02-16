@@ -70,15 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => observer.observe(el));
 
     // 3. Initialize ScrollStack for Technical Skills
-    const skillsContainer = document.querySelector('.scroll-stack-container');
-    if (skillsContainer && window.innerWidth > 768) {
-        new ScrollStack(skillsContainer, {
-            itemStackDistance: 40,
-            itemScale: 0.05,
-            baseScale: 0.9,
-            stackPosition: '15%',
-            useWindowScroll: true
-        });
+    try {
+        const skillsContainer = document.querySelector('.scroll-stack-container');
+        if (skillsContainer && window.innerWidth > 768 && typeof ScrollStack !== 'undefined') {
+            new ScrollStack(skillsContainer, {
+                itemStackDistance: 40,
+                itemScale: 0.05,
+                baseScale: 0.9,
+                stackPosition: '15%',
+                useWindowScroll: true
+            });
+        }
+    } catch (e) {
+        console.warn('ScrollStack initialization failed:', e);
     }
 
     // 5. Project Gallery Navigation
@@ -87,33 +91,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
 
     if (gallery && prevBtn && nextBtn) {
-        const scrollAmount = 432; // card width (400) + gap (32)
+        const updateArrows = () => {
+            const isAtStart = gallery.scrollLeft <= 5;
+            const isAtEnd = gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth - 15;
 
-        prevBtn.addEventListener('click', () => {
-            gallery.scrollBy({
-                left: -scrollAmount,
-                behavior: 'smooth'
-            });
-        });
-
-        nextBtn.addEventListener('click', () => {
-            gallery.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        });
-
-        // Hide/Show arrows based on scroll position
-        gallery.addEventListener('scroll', () => {
-            const isAtStart = gallery.scrollLeft <= 0;
-            const isAtEnd = gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth - 10;
-
-            prevBtn.style.opacity = isAtStart ? '0.3' : '1';
+            prevBtn.style.opacity = isAtStart ? '0.2' : '1';
             prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
-
-            nextBtn.style.opacity = isAtEnd ? '0.3' : '1';
+            nextBtn.style.opacity = isAtEnd ? '0.2' : '1';
             nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+        };
+
+        const getScrollAmount = () => {
+            const firstCard = gallery.querySelector('.project-card');
+            if (firstCard) {
+                const cardWidth = firstCard.offsetWidth;
+                const style = window.getComputedStyle(gallery);
+                const gap = parseInt(style.gap) || 32;
+                return cardWidth + gap;
+            }
+            return 432;
+        };
+
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            gallery.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
         });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            gallery.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+
+        gallery.addEventListener('scroll', updateArrows);
+        window.addEventListener('resize', updateArrows);
+        updateArrows();
     }
 
     // 6. Update Navigation to use Lenis for smooth scrolling
