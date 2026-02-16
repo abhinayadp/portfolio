@@ -80,7 +80,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Highlights</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact" class="btn-contact">Contact</a></li>
                 </ul>
@@ -155,118 +155,95 @@
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Selected Projects</h2>
-                <div class="projects-grid">
-                    <div class="glass-card project-card">
-                        <div class="project-content">
-                            <div class="project-header">
+                <div class="gallery-wrapper">
+                    <button class="gallery-nav prev" id="prevBtn" aria-label="Previous Projects">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="projects-gallery" id="projectsGallery">
+                        <!-- Project 1: Power BI -->
+                        <article class="project-card glass-card">
+                            <div class="project-image-placeholder">
+                                <img src="images/power-bi-dashboard.png" alt="Data Professional Survey Breakdown"
+                                    class="project-thumbnail">
+                            </div>
+                            <div class="project-content">
                                 <span class="project-tag">Power BI • Data Analysis</span>
-                                <a href="https://github.com/abhinayadp/Power-BI-Data-Professional-Survey-Breakdown"
-                                    target="_blank" class="github-link" title="View Source Code">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                </a>
+                                <h3>Data Professional Survey Breakdown</h3>
+                                <p>Interactive analysis of global data professional survey responses focusing on salary,
+                                    roles, and tools. Analyzed 630+ professionals to identify industry trends.</p>
+                                <div class="tech-stack">
+                                    <span>Power BI</span>
+                                    <span>Power Query</span>
+                                    <span>DAX</span>
+                                </div>
                             </div>
-                            <h3>Data Professional Survey Breakdown</h3>
-                            <p>Interactive analysis of global data professional survey responses focusing on salary,
-                                roles, tools, and job satisfaction. Analyzed responses from 630 professionals.</p>
-                            <div class="tech-stack">
-                                <span>Power BI</span>
-                                <span>Power Query</span>
-                                <span>DAX</span>
-                            </div>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="glass-card project-card">
-                        <div class="project-content">
-                            <div class="project-header">
+                        <!-- Project 2: Healthcare -->
+                        <article class="project-card glass-card">
+                            <div class="project-content">
                                 <span class="project-tag">Healthcare Data Mining</span>
-                                <a href="https://github.com/Pratham0919/Cardiovascular-disease-Prediction-Using-Healthcare-Data-Mining-Techniques"
-                                    target="_blank" class="github-link" title="View Source Code">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                </a>
+                                <h3>Cardiovascular Disease Prediction</h3>
+                                <p>Applied classification algorithms on healthcare datasets. Compared Logistic
+                                    Regression, Random Forests, and SVM for patient risk stratification.</p>
+                                <div class="tech-stack">
+                                    <span>Python</span>
+                                    <span>Scikit-learn</span>
+                                    <span>Pandas</span>
+                                </div>
                             </div>
-                            <h3>Cardiovascular Disease Prediction</h3>
-                            <p>Applied classification algorithms on healthcare datasets. Compared Logistic Regression,
-                                Random Forests, and SVM, achieving strong predictive accuracy.</p>
-                            <div class="tech-stack">
-                                <span>Python</span>
-                                <span>Scikit-learn</span>
-                                <span>Pandas</span>
-                            </div>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="glass-card project-card">
-                        <div class="project-content">
-                            <div class="project-header">
+                        <!-- Project 3: NLP -->
+                        <article class="project-card glass-card">
+                            <div class="project-content">
                                 <span class="project-tag">NLP • SemEval</span>
-                                <a href="https://github.com/aishwarya0525/SharedTask3" target="_blank"
-                                    class="github-link" title="View Source Code">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                </a>
+                                <h3>Multilingual Event Detection</h3>
+                                <p>Built NLP pipelines using transformer models (mBERT, mT5, XLM-R) for polarization
+                                    detection across diverse languages and events.</p>
+                                <div class="tech-stack">
+                                    <span>Transformers</span>
+                                    <span>mBERT</span>
+                                    <span>XLM-R</span>
+                                </div>
                             </div>
-                            <h3>Multilingual Event Detection</h3>
-                            <p>Built NLP pipelines using transformer models (mBERT, mT5, XLM-R) for polarization
-                                detection.</p>
-                            <div class="tech-stack">
-                                <span>Transformers</span>
-                                <span>XLM-R</span>
-                            </div>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="glass-card project-card">
-                        <div class="project-content">
-                            <div class="project-header">
+                        <!-- Project 4: Computer Vision -->
+                        <article class="project-card glass-card">
+                            <div class="project-content">
                                 <span class="project-tag">Computer Vision</span>
-                                <a href="https://github.com/abhinayadp/Deepfake-Detection" target="_blank"
-                                    class="github-link" title="View Source Code">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                </a>
+                                <h3>Deepfake Detection CNN</h3>
+                                <p>Designed a CNN-based model with TensorFlow/Keras to identify manipulated images,
+                                    achieving 97% accuracy on diverse datasets.</p>
+                                <div class="tech-stack">
+                                    <span>TensorFlow</span>
+                                    <span>Keras</span>
+                                    <span>CNN</span>
+                                </div>
                             </div>
-                            <h3>Deepfake Detection CNN</h3>
-                            <p>Designed a CNN-based model with TensorFlow/Keras to identify manipulated images.</p>
-                            <div class="tech-stack">
-                                <span>TensorFlow</span>
-                                <span>CNN</span>
-                            </div>
-                        </div>
+                        </article>
                     </div>
+                    <button class="gallery-nav next" id="nextBtn" aria-label="Next Projects">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
 
 
 
-        <section id="skills" class="section">
-            <div class="container">
+        <section id="skills" class="section scroll-stack-section">
+            <div class="container scroll-stack-container">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-wrapper">
-                    <div class="skill-category">
+                    <div class="skill-category scroll-stack-card">
                         <h3>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -280,7 +257,7 @@
                             <span>Python</span><span>R</span><span>Java</span><span>C/C++</span><span>SQL</span><span>MATLAB</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category scroll-stack-card">
                         <h3>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -297,7 +274,7 @@
                                 Engineering</span><span>Model Deployment</span><span>MLOps</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category scroll-stack-card">
                         <h3>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -315,7 +292,7 @@
                                 Wrangling</span><span>Feature Selection</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category scroll-stack-card">
                         <h3>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -332,7 +309,7 @@
                                 BI</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category scroll-stack-card">
                         <h3>Data / Business Analyst</h3>
                         <div class="skill-tags">
                             <span>SQL Optimization</span><span>Dashboard Development</span><span>KPI
@@ -342,7 +319,7 @@
                                 Segmentation</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category scroll-stack-card">
                         <h3>Product Analytics & Experimentation</h3>
                         <div class="skill-tags">
                             <span>A/B Testing</span><span>C1/C2 Testing</span><span>Experiment
@@ -352,7 +329,7 @@
                                 Churn)</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category scroll-stack-card">
                         <h3>Data Engineering</h3>
                         <div class="skill-tags">
                             <span>ETL / ELT Pipelines</span><span>Data Warehousing</span><span>Data
@@ -360,6 +337,7 @@
                                 Streaming Systems</span>
                         </div>
                     </div>
+                    <div class="scroll-stack-end"></div>
                 </div>
             </div>
         </section>
@@ -371,23 +349,25 @@
                         <h2 class="section-title alternate">Experience</h2>
                         <div class="timeline">
                             <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content glass-card smaller-card">
-                                    <div class="timeline-header">
-                                        <h3>Graduate Teaching Assistant</h3>
-                                        <span class="company">University of Oklahoma</span>
-                                        <span class="date">Jan 2026 – Present</span>
-                                    </div>
-                                    <p>Assisted instruction in algorithm design and analysis; mentored students.</p>
+                                <div class="timeline-content">
+                                    <span class="date">Jan 2026 – Present</span>
+                                    <h3>Graduate Teaching Assistant</h3>
+                                    <span class="company">University of Oklahoma</span>
+                                    <ul class="timeline-list">
+                                        <li>Mentor students on algorithm design and analysis strategies.</li>
+                                        <li>Assistance in grading programming assignments in Python.</li>
+                                        <li>Guide implementation of Master Theorem and recurrence relations.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="research-col">
                         <h2 class="section-title alternate">Research</h2>
-                        <div class="research-card glass-card smaller-card">
+                        <div class="research-card glass-card">
                             <div class="project-header">
-                                <h3>Deepfake Detection</h3>
+                                <span class="project-tag">Publication</span>
                                 <a href="https://ijrar.org/papers/IJRAR24C1087.pdf" target="_blank" class="github-link"
                                     title="View Full Paper">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -399,8 +379,11 @@
                                     </svg>
                                 </a>
                             </div>
+                            <h3>Detection Framework</h3>
                             <p class="journal">IJRAR, Vol. 11, Issue 3, 2024</p>
-                            <p>Proposed a CNN-based framework to detect manipulated media, achieving 98–99% accuracy.
+                            <p>Proposed a CNN-based framework to detect manipulated media using
+                                <strong>MobileNet</strong> and VGG architectures, achieving <strong>98–99%</strong>
+                                accuracy.
                             </p>
                         </div>
                     </div>
@@ -421,13 +404,13 @@
                             <div class="coursework">
                                 <h5>Relevant Coursework:</h5>
                                 <div class="course-tags">
-                                    <span>Database Management Systems</span>
-                                    <span>Intelligent Data Analytics</span>
-                                    <span>Statistics</span>
                                     <span>Algorithm Analysis</span>
                                     <span>Data Mining</span>
-                                    <span>Energy Analytics</span>
+                                    <span>Intelligent Data Analytics</span>
                                     <span>NLP</span>
+                                    <span>Database Management Systems</span>
+                                    <span>Statistics</span>
+                                    <span>Energy Analytics</span>
                                 </div>
                             </div>
                         </div>
@@ -438,11 +421,23 @@
                             <h4>B.Tech Computer Science (AI & ML)</h4>
                             <p class="school">CMR Engineering College</p>
                             <span class="gpa">GPA: 7.91/10.0</span>
+                            <div class="coursework">
+                                <h5>Relevant Coursework:</h5>
+                                <div class="course-tags">
+                                    <span>Artificial Intelligence</span>
+                                    <span>Machine Learning</span>
+                                    <span>Neural Networks & Deep Learning</span>
+                                    <span>Computational Intelligence</span>
+                                    <span>Big Data Analytics</span>
+                                    <span>Soft Computing</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <section id="contact" class="section footer-section">
             <div class="container">
@@ -508,9 +503,12 @@
 
     <!-- Core Dependencies -->
     <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="js/LiquidEther.js"></script>
     <script src="js/FloatingDock.js"></script>
     <script src="js/CardHover.js"></script>
+    <script src="node_modules/lenis/dist/lenis.min.js"></script>
+    <script src="js/ScrollStack.js"></script>
     <script src="js/ThemeSync.js"></script>
     <script src="js/script.js"></script>
 </body>

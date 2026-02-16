@@ -69,16 +69,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedElements.forEach(el => observer.observe(el));
 
-    // Smooth Scroll for Navigation Links
+    // 3. Initialize ScrollStack for Technical Skills
+    const skillsContainer = document.querySelector('.scroll-stack-container');
+    if (skillsContainer && window.innerWidth > 768) {
+        new ScrollStack(skillsContainer, {
+            itemStackDistance: 40,
+            itemScale: 0.05,
+            baseScale: 0.9,
+            stackPosition: '15%',
+            useWindowScroll: true
+        });
+    }
+
+    // 5. Project Gallery Navigation
+    const gallery = document.getElementById('projectsGallery');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (gallery && prevBtn && nextBtn) {
+        const scrollAmount = 432; // card width (400) + gap (32)
+
+        prevBtn.addEventListener('click', () => {
+            gallery.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            gallery.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        // Hide/Show arrows based on scroll position
+        gallery.addEventListener('scroll', () => {
+            const isAtStart = gallery.scrollLeft <= 0;
+            const isAtEnd = gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth - 10;
+
+            prevBtn.style.opacity = isAtStart ? '0.3' : '1';
+            prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+
+            nextBtn.style.opacity = isAtEnd ? '0.3' : '1';
+            nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+        });
+    }
+
+    // 6. Update Navigation to use Lenis for smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+            const targetId = this.getAttribute('href');
+            if (window.globalLenis) {
+                window.globalLenis.scrollTo(targetId, {
+                    offset: -100,
+                    lerp: 0.08
                 });
+            } else {
+                const target = document.querySelector(targetId);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
