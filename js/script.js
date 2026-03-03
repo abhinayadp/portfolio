@@ -69,63 +69,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedElements.forEach(el => observer.observe(el));
 
-    // 3. Initialize ScrollStack for Technical Skills
-    try {
-        const skillsContainer = document.querySelector('.scroll-stack-container');
-        if (skillsContainer && window.innerWidth > 768 && typeof ScrollStack !== 'undefined') {
-            new ScrollStack(skillsContainer, {
-                itemStackDistance: 40,
-                itemScale: 0.05,
-                baseScale: 0.9,
-                stackPosition: '15%',
-                useWindowScroll: true
-            });
-        }
-    } catch (e) {
-        console.warn('ScrollStack initialization failed:', e);
-    }
-
-    // 5. Project Gallery Navigation
-    const gallery = document.getElementById('projectsGallery');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    if (gallery && prevBtn && nextBtn) {
-        const updateArrows = () => {
-            const isAtStart = gallery.scrollLeft <= 5;
-            const isAtEnd = gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth - 15;
-
-            prevBtn.style.opacity = isAtStart ? '0.2' : '1';
-            prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
-            nextBtn.style.opacity = isAtEnd ? '0.2' : '1';
-            nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
-        };
-
-        const getScrollAmount = () => {
-            const firstCard = gallery.querySelector('.project-card');
-            if (firstCard) {
-                const cardWidth = firstCard.offsetWidth;
-                const style = window.getComputedStyle(gallery);
-                const gap = parseInt(style.gap) || 32;
-                return cardWidth + gap;
+    // 3. Initialize ScrollStack for Technical Skills & Education
+    const initScrollStack = (selector, options) => {
+        try {
+            const container = document.querySelector(selector);
+            if (container && window.innerWidth > 768 && typeof ScrollStack !== 'undefined') {
+                new ScrollStack(container, options);
             }
-            return 432;
-        };
+        } catch (e) {
+            console.warn(`ScrollStack initialization failed for ${selector}:`, e);
+        }
+    };
 
-        prevBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            gallery.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-        });
+    initScrollStack('#skills .scroll-stack-container', {
+        itemStackDistance: 40,
+        itemScale: 0.05,
+        baseScale: 0.9,
+        stackPosition: '15%',
+        useWindowScroll: true
+    });
 
-        nextBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            gallery.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-        });
+    // 4. Academic Journey Spiral Animation
+    const journeyPath = document.getElementById('journeyPath');
+    const journeyArrow = document.getElementById('journeyArrow');
 
-        gallery.addEventListener('scroll', updateArrows);
-        window.addEventListener('resize', updateArrows);
-        updateArrows();
+    if (journeyPath) {
+        const pathLength = journeyPath.getTotalLength();
+        journeyPath.style.strokeDasharray = pathLength;
+        journeyPath.style.strokeDashoffset = pathLength;
+
+        const journeyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    journeyPath.style.transition = 'stroke-dashoffset 2.5s ease-in-out';
+                    journeyPath.style.strokeDashoffset = '0';
+                    if (journeyArrow) {
+                        setTimeout(() => {
+                            journeyArrow.style.transition = 'opacity 0.5s ease';
+                            journeyArrow.style.opacity = '1';
+                        }, 2300);
+                    }
+                    journeyObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        journeyObserver.observe(document.querySelector('.edu-journey-section'));
     }
+
+    // 5. Flip Card Interactions (Handled via CSS)
+    // No JS needed for hover-flip usually, but can be added for touch support if needed.
 
     // 6. Update Navigation to use Lenis for smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

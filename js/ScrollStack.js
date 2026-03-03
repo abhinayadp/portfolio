@@ -25,11 +25,7 @@ class ScrollStack {
 
     // Pre-calculate positions to avoid layout thrashing during scroll
     cachePositions() {
-        this.cards = Array.from(
-            this.options.useWindowScroll
-                ? document.querySelectorAll('.scroll-stack-card')
-                : this.scroller.querySelectorAll('.scroll-stack-card')
-        );
+        this.cards = Array.from(this.scroller.querySelectorAll('.scroll-stack-card'));
 
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -45,9 +41,7 @@ class ScrollStack {
             };
         });
 
-        const endElement = this.options.useWindowScroll
-            ? document.querySelector('.scroll-stack-end')
-            : this.scroller.querySelector('.scroll-stack-end');
+        const endElement = this.scroller.querySelector('.scroll-stack-end');
 
         if (endElement) {
             const endRect = endElement.getBoundingClientRect();
