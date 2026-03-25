@@ -1716,3 +1716,34 @@ footer {
     top: 50%;
     transform: translateY(-50%);
 }
+
+footer {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.page-views-text {
+    position: absolute;
+    right: 0;
+    bottom: 20px; /* Aligns with the padding of the footer */
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+#view-count {
+    font-weight: 700;
+    color: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+    .page-views-text {
+        position: static;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
