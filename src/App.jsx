@@ -9,6 +9,7 @@ import FloatingTags from './components/FloatingTags/FloatingTags';
 import ProjectsSection from './components/ProjectsSection/ProjectsSection';
 import ExperienceSection from './components/ExperienceSection/ExperienceSection';
 import EducationSection from './components/EducationSection/EducationSection';
+import SkillsSection from './components/SkillsSection/SkillsSection';
 
 const projects = [
   {
@@ -398,93 +399,7 @@ function App() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="section">
-          <div className="container">
-            <h2 className="section-title">Technical Skills</h2>
-            <div className="skills-wrapper">
-              <div className="skill-category">
-                <h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                  Programming
-                </h3>
-                <div className="skill-tags">
-                  <span>Python</span><span>R</span><span>SQL</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path>
-                    <path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"></path>
-                  </svg>
-                  Machine Learning / AI
-                </h3>
-                <div className="skill-tags">
-                  <span>Scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>PyTorch</span><span>XGBoost</span><span>NLP</span><span>Deep Learning</span><span>Generative AI</span><span>LLM Fine-tuning</span><span>Feature Engineering</span><span>Model Deployment</span><span>MLOps</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <line x1="18" y1="20" x2="18" y2="10"></line>
-                    <line x1="12" y1="20" x2="12" y2="4"></line>
-                    <line x1="6" y1="20" x2="6" y2="14"></line>
-                  </svg>
-                  Data Science
-                </h3>
-                <div className="skill-tags">
-                  <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>BigQuery</span><span>Predictive Modeling</span><span>EDA</span><span>Statistical Modeling</span><span>Hypothesis Testing</span><span>Time Series Analysis</span><span>Data Cleaning & Wrangling</span><span>Feature Selection</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                  </svg>
-                  Tools & Cloud
-                </h3>
-                <div className="skill-tags">
-                  <span>SQL</span><span>MySQL</span><span>MongoDB</span><span>Snowflake</span><span>AWS</span><span>Azure</span><span>GCP</span><span>Git</span><span>CI/CD</span><span>Airflow</span><span>REST APIs</span><span>Streamlit</span><span>FastAPI</span><span>Tableau</span><span>Power BI</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h3>Data / Business Analyst</h3>
-                <div className="skill-tags">
-                  <span>SQL Optimization</span><span>Dashboard Development</span><span>KPI Design</span><span>Stakeholder Reporting</span><span>Business Intelligence</span><span>Data Storytelling</span><span>Root Cause Analysis</span><span>Cohort Analysis</span><span>Revenue Analytics</span><span>Customer Segmentation</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h3>Product Analytics & Experimentation</h3>
-                <div className="skill-tags">
-                  <span>A/B Testing</span><span>C1/C2 Testing</span><span>Experiment Design</span><span>Statistical Power Analysis</span><span>Feature Impact Analysis</span><span>User Behavior Analytics</span><span>Growth Analytics</span><span>SaaS Metrics (MRR, CAC, LTV, Churn)</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h3>Data Engineering</h3>
-                <div className="skill-tags">
-                  <span>ETL / ELT Pipelines</span><span>Data Warehousing</span><span>Data Modeling</span><span>Big Data</span><span>Spark</span><span>Batch & Streaming Systems</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SkillsSection />
 
         {/* Projects Section */}
         <ProjectsSection projects={projects} />

@@ -1080,6 +1080,18 @@ a {
     grid-column: span 5;
 }
 
+.skill-category:nth-child(5) {
+    grid-column: span 4;
+}
+
+.skill-category:nth-child(6) {
+    grid-column: span 4;
+}
+
+.skill-category:nth-child(7) {
+    grid-column: span 4;
+}
+
 @media (max-width: 1000px) {
     .skill-category:nth-child(n) {
         grid-column: span 12 !important;
@@ -1088,7 +1100,7 @@ a {
 
 .skill-category:hover {
     transform: translateY(-10px) scale(1.02);
-    border-color: var(--accent-color);
+    border-color: var(--accent-secondary);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
 
@@ -1104,7 +1116,7 @@ a {
 }
 
 .skill-category svg {
-    color: var(--accent-color);
+    color: var(--accent-secondary);
 }
 
 .skill-tags {
@@ -1126,9 +1138,11 @@ a {
 }
 
 .skill-tags span:hover {
-    background: var(--text-primary);
-    color: var(--bg-color);
-    transform: scale(1.05);
+    background: var(--accent-secondary);
+    color: #fff;
+    border-color: var(--accent-secondary);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    transform: translateY(-4px) scale(1.05);
 }
 
 /* Contact/Footer */

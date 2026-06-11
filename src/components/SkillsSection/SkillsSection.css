@@ -1,0 +1,144 @@
+/* ── Skills Ticker Section styling ── */
+.skills-ticker-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.skills-rows-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--card-border, rgba(255, 255, 255, 0.05));
+  position: relative;
+}
+
+.skills-row:first-child {
+  border-top: 1px solid var(--card-border, rgba(255, 255, 255, 0.05));
+}
+
+/* ── Category Header ── */
+.skills-row-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 3;
+}
+
+.skills-row-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+  color: var(--lane-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.skills-row-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ── Sliding Track Wrapper (Scrollable) ── */
+.skills-row-track-wrapper {
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbars in Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbars in IE/Edge */
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 6px 0;
+  z-index: 1;
+}
+
+/* Webkit scrollbar hiding (Chrome, Safari, Opera) */
+.skills-row-track-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fade gradients to mask the track edges */
+.skills-row-track-wrapper::before,
+.skills-row-track-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.skills-row-track-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+}
+
+.skills-row-track-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+}
+
+.skills-row-track {
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
+}
+
+.skills-pill {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+  color: var(--text-secondary);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.3s ease, 
+              color 0.3s ease, 
+              box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: default;
+}
+
+.skills-pill:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: var(--lane-color, var(--accent-secondary));
+  color: var(--text-primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1), 0 0 12px var(--lane-color);
+}
+
+[data-theme='dark'] .skills-pill:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 15px var(--lane-color);
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 900px) {
+  .skills-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px 0;
+  }
+
+  .skills-row-header {
+    padding-bottom: 2px;
+  }
+}
