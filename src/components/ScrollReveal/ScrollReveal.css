@@ -1,0 +1,17 @@
+.scroll-reveal {
+  margin: 0 0 32px 0;
+  overflow: hidden;
+}
+
+.scroll-reveal-text {
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.75;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.sr-word {
+  display: inline-block;
+  will-change: opacity, filter;
+}

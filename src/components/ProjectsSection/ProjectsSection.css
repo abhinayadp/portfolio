@@ -1,0 +1,233 @@
+/* ─── Projects Flow Layout ─── */
+.projects-flow {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.proj-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--card-border, rgba(0,0,0,0.08));
+}
+
+.proj-card:first-child {
+  border-top: 1px solid var(--card-border, rgba(0,0,0,0.08));
+}
+
+/* RTL: flip image to the right */
+.proj-card--rtl {
+  direction: rtl;
+}
+.proj-card--rtl > * {
+  direction: ltr;
+}
+
+/* ─── Image ─── */
+.proj-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.proj-img-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proj-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  padding: 20px;
+  transform-origin: center center;
+  will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.proj-card:hover .proj-img-wrap img {
+  transform: scale(1.03);
+}
+
+.proj-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-color, #191970) 0%, transparent 60%);
+  opacity: 0.15;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.proj-card:hover .proj-img-overlay {
+  opacity: 0.25;
+}
+
+/* ─── Info Panel ─── */
+.proj-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 64px;
+  gap: 20px;
+  position: relative;
+}
+
+.proj-card--rtl .proj-info {
+  padding: 60px 64px 60px 80px;
+}
+
+/* ─── Meta row ─── */
+.proj-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.proj-index {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.proj-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  background: rgba(37, 99, 235, 0.08);
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+[data-theme='dark'] .proj-tag {
+  color: var(--accent-color);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+/* ─── Title ─── */
+.proj-title {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ─── Desc ─── */
+.proj-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0;
+}
+
+/* ─── Pills ─── */
+.proj-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.proj-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--pill-bg);
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.proj-card:hover .proj-pill {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+/* ─── Links ─── */
+.proj-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.proj-link--primary {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(25, 25, 112, 0.25);
+}
+
+.proj-link--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(25, 25, 112, 0.35);
+  filter: brightness(1.15);
+}
+
+[data-theme='dark'] .proj-link--primary {
+  background: var(--accent-color);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.25);
+}
+
+.proj-link--secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border, rgba(0,0,0,0.12));
+}
+
+.proj-link--secondary:hover {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .proj-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px auto;
+    direction: ltr !important;
+  }
+
+  .proj-info,
+  .proj-card--rtl .proj-info {
+    padding: 40px 28px;
+  }
+
+  .proj-desc {
+    max-width: 100%;
+  }
+}
